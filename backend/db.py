@@ -15,6 +15,7 @@ client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
 
 db = client["ecommerce"]
 products_collection = db["products"]
+users_collection = db["users"]
 
 if __name__ == "__main__":
     try:
