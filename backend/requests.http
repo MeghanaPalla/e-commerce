@@ -1,0 +1,29 @@
+### Register
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{"name": "Test User", "email": "test@example.com", "password": "mypassword123"}
+
+### Register same email again (expect 409)
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{"name": "Test User", "email": "TEST@example.com", "password": "mypassword123"}
+
+### Who am I before login (expect 401)
+GET {{base}}/auth/me
+
+### Login
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{"email": "test@example.com", "password": "mypassword123"}
+
+### Who am I after login (expect 200)
+GET {{base}}/auth/me
+
+### Wrong password (expect 401)
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{"email": "test@example.com", "password": "wrongpassword"}
