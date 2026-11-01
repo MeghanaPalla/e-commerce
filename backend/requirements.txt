@@ -1,5 +1,5 @@
-Flask
-Flask-Login
+flask
+flask-cors
 pymongo
+pyjwt
 python-dotenv
-pandas
